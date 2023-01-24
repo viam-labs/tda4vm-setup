@@ -1,5 +1,6 @@
 #!/bin/bash
 # this script assumes you have a freshly flashed tda4vm from following the instructions at https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-sk-tda4vm/latest/exports/docs/getting_started.html#software-setup
+echo "NOTE: This script will cause the board to reboot upon completion!"
 
 # set up GPIO as per https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-sk-tda4vm/latest/exports/docs/pi_hdr_programming.html?highlight=gpio#
 cd /opt/edge_ai_apps
@@ -12,11 +13,6 @@ ar x libfuse2_2.9.9-1+deb10u1_arm64.deb
 tar xvf data.tar.xz
 mv lib/aarch64-linux-gnu/lib* /lib
 ldconfig
-
-# grab and install viam-server
-wget http://packages.viam.com/apps/viam-server/viam-server-stable-aarch64.AppImage -O viam-server
-chmod 755 viam-server
-./viam-server --aix-install
 
 # restart board (needed to get gpio functionality working
 reboot now 
