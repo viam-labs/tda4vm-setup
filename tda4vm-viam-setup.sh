@@ -14,5 +14,5 @@ tar xvf data.tar.xz
 mv lib/aarch64-linux-gnu/lib* /lib
 ldconfig
 
-# restart board (needed to get gpio functionality working
+# restart board (needed to get gpio functionality working)
 reboot now 
